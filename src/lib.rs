@@ -26,7 +26,6 @@ pub fn run(listner: TcpListener) -> Result<Server, std::io::Error> {
         App::new()
             .route("/health_check", web::get().to(health_check))
             .route("/subscriptions", web::post().to(subscribe))
-        // .route("/{name}", web::get().to(greet))
     })
     .listen(listner)?
     .run();
